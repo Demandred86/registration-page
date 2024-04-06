@@ -7,6 +7,7 @@ import { HttpBackend, HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { LoaderInterceptorModule } from "./shared/interceptors/loader/loader.module";
 import { SharedModule } from "./shared/shared.module";
+import { FrontendModule } from "./ui/frontend/frontend.module";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -22,6 +23,7 @@ import { AppRoutingModule } from "./app-routing.module";
     AppRoutingModule,
     LoaderInterceptorModule,
     SharedModule,
+    FrontendModule,
     TranslateModule.forRoot({
       defaultLanguage: "it",
       loader: {
