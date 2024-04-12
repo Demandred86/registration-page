@@ -1,0 +1,64 @@
+@import "/src/styles/colors.scss";
+
+.checkbox-custom {
+	position: relative;
+	padding: 0 0 0 20px;
+	margin-top: 0;
+
+	&.disabled {
+		cursor: initial;
+
+		input,
+		label {
+			pointer-events: none;
+		}
+	}
+
+	input[type="checkbox"] {
+		position: absolute;
+		top: 50%;
+		left: 3px;
+		margin: -5px 0 0;
+		z-index: 2;
+		cursor: pointer;
+		content: "";
+		width: 10px;
+		height: 10px;
+		display: inline-block;
+		border-radius: 2px;
+		border: 1px solid $dark-grey;
+	}
+
+	label {
+		font-size: 1rem;
+		cursor: pointer;
+		margin-bottom: 0;
+		text-align: left;
+		line-height: 1.5;
+	}
+
+	.disabled {
+		background-color: #e9ecef !important;
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+
+	&.checkbox-valid {
+
+    input[type="checkbox"]:checked {
+      accent-color: white;
+      color: $primary !important;
+    }
+		input[type="checkbox"]:checked + label {
+			color:  $primary ;
+      font-weight: 600;
+		}
+	}
+
+	&.checkbox-def {
+		input[type="checkbox"]:checked + label {
+			color: black;
+		}
+	}
+}
+

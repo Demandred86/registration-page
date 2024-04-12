@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpBackend, HttpClient } from "@angular/common/http";
+import { HttpBackend, HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { LoaderInterceptorModule } from "./shared/interceptors/loader/loader.module";
 import { SharedModule } from "./shared/shared.module";
 import { FrontendModule } from "./ui/frontend/frontend.module";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { AppRoutingModule } from "./app-routing.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { AppRoutingModule } from "./app-routing.module";
     { provide: LOCALE_ID, useValue: "it" },
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     LoaderInterceptorModule,
     SharedModule,

@@ -1,1 +1,68 @@
-<p>registration-form works!</p>
+<div class="wrapper">
+    <div class="inner">
+        <div class="image-holder">
+            <img class="w-100 object-fit-contain" src="{{ backgroundForm }}" alt="Background">
+        </div>
+        <form class="form-wrapper">
+            <h1 class="title">{{"registrationForm.title" | translate}}</h1>
+            <div class="form-group">
+                <app-text-input
+                    class="m-right-25"
+                    label="registrationForm"
+                    [FormGroup]="formGroup"
+                    controlName="firstName"
+                />
+                <app-text-input label="registrationForm" [FormGroup]="formGroup" controlName="lastName"/>
+            </div>
+            <div class="m-top-3">
+                <app-text-input label="registrationForm" [FormGroup]="formGroup" controlName="email"/>
+            </div>
+            <div class="m-top-3">
+                <app-text-input label="registrationForm" [FormGroup]="formGroup" controlName="address"/>
+            </div>
+            <div class="m-top-3">
+                <app-text-input
+                    label="registrationForm"
+                    [FormGroup]="formGroup"
+                    controlName="password"
+                    type="password"
+                />
+                <form [formGroup]="formGroup" class="password-validation-form">
+                    <app-checkbox
+                        controlName="passwordMin"
+                        [disabled]="true"
+                        [formGroupRef]="formGroup"
+                        [isChecked]="formGroup.get('passwordMin')?.value"
+                        label="registrationForm"
+                    ></app-checkbox>
+                    <app-checkbox
+                        controlName="passwordNumber"
+                        [disabled]="true"
+                        [formGroupRef]="formGroup"
+                        [isChecked]="formGroup.get('passwordNumber')?.value"
+                        label="registrationForm"
+                    ></app-checkbox>
+                    <app-checkbox
+                        controlName="passwordSpecial"
+                        [disabled]="true"
+                        [formGroupRef]="formGroup"
+                        [isChecked]="formGroup.get('passwordSpecial')?.value"
+                        label="registrationForm"
+                    ></app-checkbox>
+                </form>
+            </div>
+            <div class="m-top-3">
+                <app-text-input
+                    label="registrationForm"
+                    [FormGroup]="formGroup"
+                    controlName="repeatedPassword"
+                    type="password"
+                />
+            </div>
+            	<ng-container *ngIf="passwordMismatch">
+
+            	<span class="error-feedback"> {{ "registrationForm.password.error.passwordMismatch"| translate }}
+	</span></ng-container>
+        </form>
+    </div>
+</div>

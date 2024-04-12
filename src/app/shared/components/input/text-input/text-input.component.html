@@ -1,0 +1,19 @@
+<div class="d-flex flex-column flex-row-reverse">
+{{isValid | json}}
+	<div class="input-group" [formGroup]="FormGroup">
+		<input
+			[ngClass]="{'invalid': inputError, 'valid': isValid}"
+			class="form-control"
+			[name]="controlName"
+			[formControlName]="controlName"
+			(blur)="blurAction()"
+			[placeholder]="_placeholder | translate"
+			[type]="type"
+			[autocomplete]="type === 'password' ? 'new-password' : 'off'"
+		/>
+	</div>
+	<ng-container *ngIf="inputError">
+	<ng-container *ngFor="let error of errors">
+	<span class="error-feedback"> {{ errorString(error) | translate }}
+	</span></ng-container></ng-container>
+</div>
