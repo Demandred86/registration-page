@@ -5,13 +5,7 @@ import { assetPath } from 'src/app/shared/properties/types.utils';
 import { passwordValidator, validatePassword } from 'src/app/shared/utils/validators/passwordValidator';
 import { addressValidator } from 'src/app/shared/utils/validators/validator';
 
-interface PasswordErrors {
-	minLength: boolean;
-	hasANumber: boolean;
-	insufficientSpecialCharacters: boolean;
-	containsSpace: boolean;
-	nameOrSurnameUsed: boolean;
-}
+
 @Component({
 	selector: 'app-registration-form',
 	templateUrl: './registration-form.component.html',
@@ -93,11 +87,15 @@ export class RegistrationFormComponent implements OnInit {
 	}
 
 	get passwordMismatch(): boolean {
-		if (this.formGroup?.errors && this.formGroup?.errors["passwordMatchError"]) {
+		if (this.formGroup?.errors && this.formGroup?.errors["passwordMismatch"]) {
 		console.log(`mismatch`);
 			return true
 		}
 		return false
+	}
+
+	get isFormValid(): boolean {
+	return this.formGroup.valid
 	}
 }
 

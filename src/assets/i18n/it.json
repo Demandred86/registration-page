@@ -19,7 +19,8 @@
 			"placeholder": "Email",
 			"label": "Indirizzo email",
 			"error": {
-				"required": "Formato indirizzo email errato"
+				"required": "Inserire una email",
+				"pattern":"Formato indirizzo email errato"
 			}
 		},
 		"address": {
@@ -47,7 +48,8 @@
 			"placeholder": "Conferma Password",
 			"label": "Conferma Password",
 			"error": {
-				"required": "Le password non coincidono"
+				"required": "Le password non coincidono",
+				"passwordMatchError": "Le password non coincidono"
 			}
 		},
 		"passwordMin": {
@@ -58,6 +60,7 @@
 		},
 		"passwordSpecial": {
 			"placeholder": "Almeno 3 caratteri speciali"
-		}
+		},
+		"submit":"Registrati"
 	}
 }

@@ -1,0 +1,372 @@
+// /* You can add global styles to this file, and also import other style files */
+// @import "bootstrap";
+// @import "colors";
+// @import "layout";
+// @import "buttons";
+// @import "img";
+// @import "material";
+// @import "../assets/fonts/style.css";
+
+// html {
+// 	font-size: 62.5%;
+// }
+// body {
+// 	margin: 0;
+// 	background-color: $background;
+// 	color: $text;
+// 	font-family: "Arial", sans-serif;
+// }
+
+// .w-fit {
+// 	width: fit-content;
+// }
+
+// a {
+// 	color: $secondary-color;
+// }
+
+// // Font Sizes
+// .font-size-12 {
+// 	font-size: 12px;
+// }
+
+// //Font Weights
+// .weight-light {
+// 	font-weight: 300;
+// }
+
+// .highlight {
+// 	&-active {
+// 		border-radius: 5px;
+// 		padding: 1.6rem;
+// 		background-color: $background-selected;
+// 		border: 1px solid $main-color;
+// 	}
+// }
+
+// .highlight-show-installment {
+// 	border-radius: 10px;
+// 	padding: 0.8rem;
+// 	background-color: $background-gray;
+// }
+
+// .highlight-installment {
+// 	border-radius: 10px;
+// 	padding: 0.5rem 1rem 0.5rem;
+// 	background-color: rgba(7, 171, 184, 0.05);
+// 	box-sizing: content-box;
+// 	border: 1px solid transparent;
+
+// 	&-active {
+// 		box-sizing: content-box;
+// 		border-radius: 5px;
+// 		padding: 1.2rem;
+// 		background-color: rgba(7, 171, 184, 0.05);
+// 		border: 1px solid rgba(7, 171, 184, 0.5);
+// 	}
+// }
+
+// // shapes
+// .square {
+// 	display: inline-block;
+// 	width: 1rem;
+// 	height: 1rem;
+// 	background-color: $secondary-color;
+// 	margin-right: 0.2rem;
+// }
+
+// //fonts
+// .font {
+// 	&-card-title {
+// 		font-size: 2.2rem;
+// 		font-weight: 700;
+// 		line-height: 2rem;
+// 		color: $main-color;
+// 	}
+// 	&-modal {
+// 		&-title {
+// 			font-size: 2rem;
+// 			font-weight: 700;
+// 			line-height: 2.5rem;
+// 			color: $secondary-color;
+// 		}
+// 		&-body {
+// 			font-size: 1.8rem;
+// 			font-weight: 500;
+// 			line-height: 2.5rem;
+// 			color: $secondary-color;
+// 		}
+// 	}
+
+// 	&-help {
+// 		font-weight: 700;
+// 		font-size: 1.6rem;
+// 		line-height: 25px;
+// 		letter-spacing: -0.41px;
+// 		text-decoration: none;
+// 		color: $secondary-color;
+// 	}
+// 	&-primary {
+// 		font-size: 2.6rem;
+// 		font-weight: 700;
+// 		line-height: 3rem;
+// 		color: $secondary-color;
+// 	}
+// 	&-secondary {
+// 		font-size: 2.2rem;
+// 		color: $secondary-color;
+// 		font-weight: 700;
+// 		line-height: 2rem;
+// 		letter-spacing: -0.41px;
+// 	}
+// 	&-tertiary {
+// 		font-weight: 400;
+// 		font-size: 1.4rem;
+// 		line-height: 2rem;
+// 		color: $color-gray;
+// 	}
+// 	&-description {
+// 		font-size: 2rem;
+// 		font-weight: 400;
+// 		line-height: 2.2rem;
+// 		color: $color-dark;
+// 	}
+// 	&-notice {
+// 		font-size: 2rem;
+// 		font-weight: 400;
+// 		line-height: 2.2rem;
+// 		color: $secondary-color;
+// 	}
+// 	&-show-installments {
+// 		font-weight: 700;
+// 		font-size: 2.2rem;
+// 		line-height: 2rem;
+// 		color: $secondary-color;
+// 		&-secondary {
+// 			font-weight: 400;
+// 			font-size: 1.4rem;
+// 			line-height: 2rem;
+// 			color: $color-dark;
+// 			&.bold {
+// 				font-weight: 700;
+// 			}
+// 		}
+// 	}
+
+// 	&-subtext {
+// 		font-size: 11px;
+// 		font-style: italic;
+// 		font-weight: 400;
+// 		line-height: 1.4rem;
+// 		letter-spacing: -0.40799999237060547px;
+// 		text-align: left;
+// 		color: $text-color-secondary;
+// 	}
+// 	&-amount {
+// 		font-size: 2.2rem;
+// 		color: $secondary-color;
+// 		font-weight: 700;
+// 		line-height: 2rem;
+// 		letter-spacing: -0.41px;
+// 	}
+// 	&-button {
+// 		font-size: 1.6rem;
+// 		font-weight: 700;
+// 		line-height: 2.5rem;
+// 		&.color {
+// 			color: $secondary-color;
+// 		}
+// 	}
+// 	&-input {
+// 		font-size: 2rem;
+// 		font-weight: 400;
+// 		line-height: 2.5rem;
+// 	}
+// 	&-label {
+// 		font-size: 1.2rem;
+// 		font-weight: 400;
+// 		line-height: 1.5rem;
+// 		color: $color-gray;
+// 	}
+
+// 	&-installment {
+// 		font-size: 1.6rem;
+// 		color: $secondary-color;
+// 		font-weight: 400;
+// 		line-height: 25px;
+// 		&-expired {
+// 			font-size: 1.6rem;
+// 			color: $tertiary-color;
+// 			font-weight: 400;
+// 			line-height: 25px;
+// 		}
+// 	}
+// 	&-procedure {
+// 		&-text {
+// 			font-weight: 700;
+// 			font-size: 1.6rem;
+// 			line-height: 25px;
+// 			color: $main-color;
+// 		}
+// 		&-value {
+// 			font-weight: 700;
+// 			font-size: 1.6rem;
+// 			line-height: 25px;
+// 			color: $white;
+// 		}
+// 	}
+
+// 	&-status-message {
+// 		font-size: 1.8rem;
+// 		font-weight: 500;
+// 		letter-spacing: -0.041rem;
+// 		line-height: 2.2rem;
+// 	}
+// 	&-pagamento {
+// 		font-weight: 500;
+// 		font-size: 1.5rem;
+// 		line-height: 22px;
+// 		letter-spacing: -0.41px;
+// 		color: rgba(0, 0, 0, 0.5);
+// 		&-success {
+// 			&-title {
+// 				font-weight: 500;
+// 				font-size: 1.4rem;
+// 				line-height: 16.41px;
+// 				color: rgba(0, 0, 0, 1);
+// 			}
+// 			&-value {
+// 				font-weight: 400;
+// 				font-size: 1.2rem;
+// 				line-height: 14.06px;
+// 				color: rgba(0, 0, 0, 1);
+// 			}
+// 			&-subtitle {
+// 				font-weight: 400;
+// 				font-size: 1.3rem;
+// 				line-height: 16.9px;
+// 				letter-spacing: -0.41px;
+// 				color: rgba(0, 0, 0, 0.5);
+// 			}
+// 		}
+// 		&-sottotesto {
+// 			font-weight: 400;
+// 			font-size: 0.8rem;
+// 			line-height: 22px;
+// 			letter-spacing: -0.41px;
+// 			color: rgba(0, 0, 0, 0.5);
+// 		}
+// 	}
+
+// 	&-subtext {
+// 		font-size: 11px;
+// 		font-style: italic;
+// 		font-weight: 400;
+// 		line-height: 1.4rem;
+// 		letter-spacing: -0.40799999237060547px;
+// 		text-align: left;
+// 		color: $text-color-secondary;
+// 	}
+// 	&-amount {
+// 		font-size: 2.2rem;
+// 		color: $secondary-color;
+// 		font-weight: 700;
+// 		line-height: 2rem;
+// 		letter-spacing: -0.41px;
+// 	}
+// 	&-button {
+// 		font-size: 1.7rem;
+// 		font-weight: 400;
+// 		line-height: 2.2rem;
+// 		letter-spacing: -0.41px;
+// 		&.color {
+// 			color: $secondary-color;
+// 		}
+// 	}
+// }
+
+// .logo {
+// 	height: 24px;
+// 	margin-right: 0.7rem;
+// 	&-secondary {
+// 		height: 20px;
+// 		margin-right: 0.7rem;
+// 	}
+// }
+
+// .result-image {
+// 	width: 125px;
+// 	align-self: center;
+// }
+
+// .color {
+// 	&-main {
+// 		color: $main-color;
+// 	}
+// 	&-secondary {
+// 		color: $secondary-color;
+// 	}
+// }
+// #text-input input,
+// #select select {
+// 	border: none;
+// 	border-radius: 10px;
+// 	height: 80px;
+// 	background-color: $background-gray;
+// 	color: $color-gray;
+// 	font-size: 2rem;
+// 	font-weight: 400;
+// 	line-height: 2.5rem;
+// 	outline: none;
+// 	position: relative;
+// 	& option {
+// 		width: 100%;
+// 		font-size: 2.5rem;
+// 		color: $color-gray;
+// 		font-weight: 400;
+// 		line-height: 2.5rem;
+// 	}
+// }
+
+// select {
+// 	padding: 10px;
+// 	padding-right: 2.2rem;
+// 	-moz-appearance: none;
+// 	-webkit-appearance: none;
+// 	appearance: none;
+// 	background-image: url("/assets/icons/arrow-down.svg");
+// 	background-repeat: no-repeat, repeat;
+// 	background-position: right 0.7em top 50%, 0 0;
+// 	background-size: 1.5rem auto, 100%;
+// }
+
+// /* For IE (thanks to @SaiManoj) */
+// select::-ms-expand {
+// 	display: none;
+// }
+
+// #text-input input.is-invalid {
+// 	padding: 10px;
+// 	padding-right: 2.2rem;
+// 	-moz-appearance: none;
+// 	-webkit-appearance: none;
+// 	appearance: none;
+// 	background-image: url("/assets/icons/input-error.svg");
+// 	background-repeat: no-repeat, repeat;
+// 	background-position: right 0.7em top 50%, 0 0;
+// 	background-size: 3.5rem auto, 100%;
+// 	border-bottom: 2px solid $tertiary-color;
+// }
+
+// #text-input input.is-valid {
+// 	padding: 10px;
+// 	padding-right: 2.2rem;
+// 	-moz-appearance: none;
+// 	-webkit-appearance: none;
+// 	appearance: none;
+// 	background-image: url("/assets/icons/success.svg");
+// 	background-repeat: no-repeat, repeat;
+// 	background-position: right 0.7em top 50%, 0 0;
+// 	background-size: 3.5rem auto, 100%;
+// 	border-bottom: 2px solid $background-dark-green;
+// }

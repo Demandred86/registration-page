@@ -1,12 +1,13 @@
 @import "../../../../../styles/colors.scss";
 
 .error-feedback:last-child {
-	margin-bottom: 1rem;
+	margin-bottom: 1.4rem;
 }
 .error-feedback {
 	display: block;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 600;
+	color:$tertiary-color;
 }
 
 .form-control {
@@ -20,6 +21,9 @@
 	padding: 0;
 	margin-bottom: 0.5rem;
 }
+input {
+	font-size: inherit
+}
 
 input.valid {
 	border-bottom: 2px solid $primary;
@@ -28,4 +32,8 @@ input.valid {
 input.invalid {
 	border-bottom: 2px solid $tertiary-color;
 
+}
+
+input::placeholder {
+  font-size: 1.6rem;
 }

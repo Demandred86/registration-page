@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, OnInit, Input } from "@angular/core";
-import { AbstractControl, FormGroup, ValidationErrors, Validators } from "@angular/forms";
+import {  FormGroup, Validators } from "@angular/forms";
 import { translateKey } from "src/app/shared/properties/types.utils";
 import { Icon, icon } from "@fortawesome/fontawesome-svg-core";
 

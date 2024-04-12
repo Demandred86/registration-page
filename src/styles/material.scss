@@ -1,0 +1,154 @@
+// @import "./colors";
+// // input wrappers
+// .mat-mdc-text-field-wrapper {
+// 	border-radius: 10px !important;
+// 	min-width: 28px !important;
+// 	height: 80px !important;
+// 	display: flex !important;
+// 	justify-content: center !important;
+// 	align-items: center !important;
+// }
+
+// // ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+// // 	padding: 0 32px !important;
+// // }
+
+// .form-label {
+// 	font-size: 2rem;
+// 	margin-bottom: 0;
+// }
+
+// .valid-option {
+// 	font-weight: 700;
+// 	color: $text-dark-green;
+
+// 	.mdc-text-field--filled {
+// 		background-color: $background-gray;
+// 	}
+// 	.mdc-line-ripple::before {
+// 		border-bottom: 2px solid $background-dark-green;
+// 	}
+// 	.mdc-line-ripple::after {
+// 		transform: none;
+// 		border-bottom: 2px solid $background-dark-green;
+// 		opacity: 1;
+// 	}
+
+// 	.form-label,
+// 	.mat.mdc.form-field-required-marker:after {
+// 		color: $text-dark-green;
+// 		font-size: 1.8rem;
+// 	}
+// }
+
+// .invalid-option {
+// 	font-size: 1.8rem;
+// 	font-weight: 700;
+// 	line-height: 2.5rem;
+// 	color: $tertiary-color;
+// 	.mdc-line-ripple::before {
+// 		border-bottom: 2px solid $tertiary-color;
+// 	}
+// 	.form-label,
+// 	.form-field-required-marker:after {
+// 		font-size: 1.8rem;
+// 		font-weight: 700;
+// 	}
+
+// 	.mdc-floating-label--required:not(.mdc-floating-label--hide-required-marker)::after {
+// 		font-size: 1.8rem;
+// 		font-weight: 700;
+// 	}
+// }
+
+// // // Label Initial State
+// .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+// 	font-size: 1.8rem;
+// 	font-weight: 700;
+// 	line-height: 2.5rem;
+// 	color: $text-dark-green;
+// }
+
+// // // Label Error State
+// .mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {
+// 	color: $tertiary-color;
+// }
+
+// // // input background color
+// .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+// 	background-color: $background-gray;
+// }
+
+// // //border-bottom-color
+// .mdc-text-field--filled .mdc-line-ripple::after {
+// 	border-bottom: 2px solid $background-dark-green;
+// }
+
+// .mat-primary .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text,
+// .mat-mdc-option .mat-pseudo-checkbox-minimal,
+// .mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after {
+// 	color: $text-dark-green;
+// }
+
+// // // select options
+// .mat-mdc-select {
+// 	margin-top: 5px;
+// 	&-value {
+// 		color: $color-dark;
+// 	}
+// }
+
+// // // select Arrow Down
+// .mat-mdc-select-arrow-wrapper {
+// 	content: "";
+// 	height: 10px !important;
+// 	padding-right: 3.2rem;
+// 	margin-bottom: 5px;
+// 	-moz-appearance: none;
+// 	-webkit-appearance: none;
+// 	appearance: none;
+// 	background-image: url("/assets/icons/arrow-down.svg");
+// 	background-repeat: no-repeat, repeat;
+// }
+
+// // // select old arrow
+// .mat-mdc-select-arrow svg {
+// 	display: none;
+// }
+// // //select error message
+// .mat-mdc-form-field-error {
+// 	color: $tertiary-color;
+// }
+// // // padding Tipo Prodotto and Codice Pratica
+// // // .mat-mdc-form-field-flex {
+// // // 	padding-top: 1.2rem;
+// // // 	padding-bottom: 0.8rem;
+// // // }
+
+// .mat-mdc-form-field-mat-focused .mat-mdc-form-field-focus-overlay {
+// 	opacity: 1;
+// }
+
+// // //input text
+// .mat-mdc-select-placeholder,
+// .mat-mdc-input-element {
+// 	color: $color-dark;
+// 	font-weight: 400;
+// 	font-size: 1.6rem;
+// 	opacity: 1;
+// 	margin-top: 0.5rem;
+// }
+
+// .text-field .mdc-floating-label {
+// 	display: flex;
+// 	flex-direction: row-reverse;
+// 	justify-content: end;
+// }
+
+// .mdc-text-field--filled .mdc-floating-label--float-above {
+// 	transform: translateY(-100%) scale(0.9) !important;
+// }
+
+// .mat-mdc-dialog-surface {
+// 	border-radius: 10px !important;
+// }

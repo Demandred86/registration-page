@@ -18,7 +18,7 @@ export function passwordValidator(): ValidatorFn {
     }
 
     if (!control.value.match(hasANumber)) {
-      errors['hasANumber'] = true;  
+      errors['hasANumber'] = true;
     }
 
     if (control.value.length < 10) {
@@ -28,30 +28,44 @@ export function passwordValidator(): ValidatorFn {
   };
 }
 
-export function validatePassword(control: AbstractControl): ValidationErrors | null {
 
-  if (!control || !control.get('password')) return null
-  const errors: ValidationErrors = {};
-  const password = control.get('password')?.value as string;
-
-  if (control.get('firstName') && password && control.get('firstName')?.value && (control.get('firstName')?.value as String).length > 3) {
-
-    const firstName = control.get('firstName')?.value as string;
-    if (password.toLowerCase().includes(firstName.toLowerCase())) {
-      errors['nameOrSurnameUsed'] = true
-    }
-  }
-  if (control.get('lastName') && password && control.get('lastName')?.value && (control.get('lastName')?.value as String).length > 3) {
-    const lastName = control.get('lastName')?.value as string;
-    if (password.toLowerCase().includes(lastName.toLowerCase())) {
-      errors['nameOrSurnameUsed'] = true
-    }
-  }
-
-    if (control.get('repeatedPassword')) {
-      const confirmPassword = control.get('repeatedPassword')?.value as string;
-      if (password && confirmPassword && password.trim() !== confirmPassword.trim()) { errors['passwordMatchError'] = true };
+  export function validatePassword(control: AbstractControl): ValidationErrors | null {
+    if (!control || !control.get('password')) {
+      return null; // No validation errors if 'password' control is not present
     }
 
-    return errors
+    const errors: ValidationErrors = {};
+    const password = control.get('password')?.value as string;
+
+    const firstName = control.get('firstName')?.value as string | undefined;
+    console.log(`firstName: ${firstName}`);
+    if (firstName)
+    console.log(``, firstName.toLowerCase());
+  if(password)
+    console.log(`password`, password.toLowerCase());
+    
+    if (firstName && firstName.length > 3 && password.toLowerCase().includes(firstName.toLowerCase())) {
+      console.log(`here`);
+    
+      errors['nameOrSurnameUsed'] = true;
+    }
+
+    const lastName = control.get('lastName')?.value as string | undefined;
+    if (lastName && lastName.length > 3 && password.toLowerCase().includes(lastName.toLowerCase())) {
+      errors['nameOrSurnameUsed'] = true;
+    }
+
+    const confirmPassword = control.get('repeatedPassword')?.value as string | undefined;
+    if (password && confirmPassword && password.trim() !== confirmPassword.trim()) {
+      errors['passwordMatchError'] = true;
+    }
+
+    if (errors["nameOrSurnameUsed"]) {
+      control.get('password')?.setErrors(errors); 
+    } 
+    if (errors["passwordMatchError"]) {
+      control.get('repeatedPassword')?.setErrors(errors); 
+    }
+    return Object.keys(errors).length > 0 ? errors : null;
   }
+

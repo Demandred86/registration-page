@@ -6,6 +6,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { MatInputModule } from "@angular/material/input";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ButtonModule } from "src/app/shared/components/button/button/button.module";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     TranslateModule, 
     ReactiveFormsModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ButtonModule
 
   ],
   exports: [RegistrationFormComponent]
