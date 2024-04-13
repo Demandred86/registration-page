@@ -39,7 +39,7 @@
 				"pattern": "Inserire una password valida",
 				"containsSpace": "La password non può includere spazi",
 				"nameOrSurnameUsed": "La password non può contenere il nome o il cognome",
-				"insufficientSpecialCharacters": " Inserire almeno 3 caratteri speciale",
+				"insufficientSpecialCharacters": "La password deve contenere almeno 3 caratteri speciale",
 				"hasANumber":"La password deve contenere almeno 1 numero",
 				"passwordMatchError":"Le password non coincidono"
 			}
@@ -61,6 +61,6 @@
 		"passwordSpecial": {
 			"placeholder": "Almeno 3 caratteri speciali"
 		},
-		"submit":"Registrati"
+		"submit":"Conferma"
 	}
 }

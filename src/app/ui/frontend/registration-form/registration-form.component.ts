@@ -88,7 +88,6 @@ export class RegistrationFormComponent implements OnInit {
 
 	get passwordMismatch(): boolean {
 		if (this.formGroup?.errors && this.formGroup?.errors["passwordMismatch"]) {
-		console.log(`mismatch`);
 			return true
 		}
 		return false

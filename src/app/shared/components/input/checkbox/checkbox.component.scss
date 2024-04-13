@@ -47,10 +47,10 @@
 
     input[type="checkbox"]:checked {
       accent-color: white;
-      color: $primary !important;
+      color: $valid !important;
     }
 		input[type="checkbox"]:checked + label {
-			color:  $primary ;
+			color:  $valid ;
       font-weight: 600;
 		}
 	}

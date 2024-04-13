@@ -1,5 +1,5 @@
 @import "/src/styles/colors.scss";
-
+@import "../node_modules/bootstrap/scss/bootstrap";
 * {
 	margin: 0;
 	padding: 0;
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	color: #333;
+	color: $black;
 	font-size: 18px;
 	margin: 0;
 }
@@ -101,14 +101,13 @@ a:hover {
 
 .form-group {
 	display: flex;
-	margin-right: 2rem;
 }
 
 .form-group input {
 	width: 50%;
 }
 
-.form-group input:first-child {
+.inner-input:first-child {
 	margin-right: 2.5rem;
 }
 
@@ -147,21 +146,9 @@ a:hover {
 	margin-top: 3rem;
 }
 
-
 .center {
 	display: flex;
 	justify-content: center;
-}
-
-select {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	cursor: pointer;
-	padding-left: 20px;
-}
-
-select option[value=""][disabled] {
-	display: none;
 }
 
 @-webkit-keyframes hvr-icon-wobble-horizontal {
@@ -228,23 +215,56 @@ select option[value=""][disabled] {
 	}
 }
 
-@media (max-width: 1199px) {
+/****************************/
+/* BELOW 1344px (Smaller desktops)*/
+/****************************/
+
+@media (max-width: 84em) {
 	.wrapper {
 		background-position: right center;
 	}
+
+	.form-wrapper .title {
+		font-size: 3.6rem;
+	}
 }
 
-@media (max-width: 991px) {
+/****************************/
+/* BELOW 1200px (Landscape Tablets)*/
+/****************************/
+@media (max-width: 75em) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+/****************************/
+/* BELOW 944px (Tablets)*/
+/****************************/
+@media (max-width: 59em) {
+	.form-group {
+		flex-direction: column;
+		.inner-input:first-child {
+			margin-right: 0;
+		}
+		.text-field-containergroup {
+			margin-top: 3rem;
+		}
+	}
+
 	.inner form {
 		padding-top: 10px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
 }
+/****************************/
+/* BELOW 704px (Smaller Tablets)*/
+/****************************/
 
-@media (max-width: 767px) {
+@media (max-width: 44em) {
 	.inner {
-		display: block;
+		flex-direction: column-reverse;
 	}
 
 	.inner .image-holder {
@@ -255,11 +275,23 @@ select option[value=""][disabled] {
 		width: 100%;
 		padding: 40px 0 30px;
 	}
-
+	img {
+		max-height: 100vh;
+	}
 	button {
 		margin-top: 60px;
 	}
 }
+/****************************/
+/* BELOW 544px (Phones)*/
+/****************************/
+
+@media (max-width: 34em) {
+	.wrapper {
+		background-image: none;
+	}
+}
+
 html,
 body {
 	height: 100%;

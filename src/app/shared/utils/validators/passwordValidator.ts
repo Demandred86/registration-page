@@ -38,14 +38,10 @@ export function passwordValidator(): ValidatorFn {
     const password = control.get('password')?.value as string;
 
     const firstName = control.get('firstName')?.value as string | undefined;
-    console.log(`firstName: ${firstName}`);
     if (firstName)
-    console.log(``, firstName.toLowerCase());
   if(password)
-    console.log(`password`, password.toLowerCase());
     
     if (firstName && firstName.length > 3 && password.toLowerCase().includes(firstName.toLowerCase())) {
-      console.log(`here`);
     
       errors['nameOrSurnameUsed'] = true;
     }

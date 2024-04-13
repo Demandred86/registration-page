@@ -1,7 +1,9 @@
-<div class="d-flex flex-column flex-row-reverse">
+<div class="d-flex flex-column">
+
+	<div class="d-flex flex-row">
 	<div class="input-group" [formGroup]="FormGroup">
 		<input
-			[ngClass]="{'invalid': inputError, 'valid': isValid}"
+			[ngClass]="{'invalid': inputErrors, 'valid': isValid}"
 			class="form-control"
 			[name]="controlName"
 			[formControlName]="controlName"
@@ -11,7 +13,15 @@
 			[autocomplete]="type === 'password' ? 'new-password' : 'off'"
 		/>
 	</div>
-	<ng-container *ngIf="inputError">
+	<div *ngIf="isRequired && !touched || touched && isValid"> 
+		<fa-icon [icon]="successIcon" [ngClass]="{'valid':isValid, 'untouched':!touched }"></fa-icon>
+	</div>
+		<div *ngIf="touched && !isValid"> 
+		<fa-icon [icon]="failIcon" class="invalid"></fa-icon>
+	</div>
+
+</div>
+	<ng-container *ngIf="inputErrors">
 	<ng-container *ngFor="let error of errors">
 	<span class="error-feedback"> {{ errorString(error) | translate }}
 	</span></ng-container></ng-container>

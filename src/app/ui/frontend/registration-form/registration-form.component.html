@@ -6,17 +6,21 @@
 		<form class="form-wrapper">
 			<h1 class="title">{{ "registrationForm.title" | translate }}</h1>
 			<div class="form-group">
+				<div class="inner-input">
 				<app-text-input
 					class="m-right-25"
 					label="registrationForm"
 					[FormGroup]="formGroup"
 					controlName="firstName"
 				/>
+			</div>
+			<div class="inner-input">
 				<app-text-input 
                 label="registrationForm" 
                 [FormGroup]="formGroup" 
                 controlName="lastName" />
 			</div>
+		</div>
 			<div class="m-top-3">
 				<app-text-input 
                 label="registrationForm" 
@@ -35,9 +39,10 @@
 					label="registrationForm"
 					[FormGroup]="formGroup"
 					controlName="password"
-					type="text"
+					type="password"
+					(paste)="(false)"
 				/>
-				<form [formGroup]="formGroup" class="password-validation-form">
+				<div [formGroup]="formGroup" class="password-validation-form">
 					<app-checkbox
 						controlName="passwordMin"
 						[disabled]="true"
@@ -59,7 +64,7 @@
 						[isChecked]="formGroup.get('passwordSpecial')?.value"
 						label="registrationForm"
 					></app-checkbox>
-				</form>
+				</div>
 			</div>
 			<div class="m-top-3">
 				<app-text-input
@@ -67,6 +72,7 @@
 					[FormGroup]="formGroup"
 					controlName="repeatedPassword"
 					type="password"
+					(paste)="(false)"
 				/>
 			</div>
 			<ng-container *ngIf="passwordMismatch">
