@@ -1,0 +1,66 @@
+{
+	"registrationForm": {
+		"title": "Registrati",
+		"firstName": {
+			"placeholder": "Nome",
+			"label": "Nome",
+			"error": {
+				"required": "Inserire il Nome"
+			}
+		},
+		"lastName": {
+			"placeholder": "Cognome",
+			"label": "Cognome",
+			"error": {
+				"required": "Inserire il Cognome"
+			}
+		},
+		"email": {
+			"placeholder": "Email",
+			"label": "Indirizzo email",
+			"error": {
+				"required": "Inserire una email",
+				"pattern":"Formato indirizzo email errato"
+			}
+		},
+		"address": {
+			"placeholder": "Indirizzo",
+			"label": "Indirizzo",
+			"error": {
+				"minLengthOrEmpty":"Inserire almeno 10 caratteri"
+			}
+		},
+		"password": {
+			"placeholder": "Password",
+			"label": "Password",
+			"error": {
+				"required": "Inserire una password",
+				"minLength": "La password deve avere almeno 10 caratteri",
+				"pattern": "Inserire una password valida",
+				"containsSpace": "La password non può includere spazi",
+				"nameOrSurnameUsed": "La password non può contenere il nome o il cognome",
+				"insufficientSpecialCharacters": "La password deve contenere almeno 3 caratteri speciale",
+				"hasANumber":"La password deve contenere almeno 1 numero",
+				"passwordMatchError":"Le password non coincidono"
+			}
+		},
+		"repeatedPassword": {
+			"placeholder": "Conferma Password",
+			"label": "Conferma Password",
+			"error": {
+				"required": "Le password non coincidono",
+				"passwordMatchError": "Le password non coincidono"
+			}
+		},
+		"passwordMin": {
+			"placeholder": "Almeno 10 caratteri"
+		},
+		"passwordNumber": {
+			"placeholder": "Almeno 1 numero"
+		},
+		"passwordSpecial": {
+			"placeholder": "Almeno 3 caratteri speciali"
+		},
+		"submit":"Conferma"
+	}
+}
