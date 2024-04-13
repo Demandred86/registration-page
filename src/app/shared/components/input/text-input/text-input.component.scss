@@ -1,0 +1,56 @@
+@import "../../../../../styles/colors.scss";
+
+.error-feedback {
+	display: block;
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: $invalid;
+	&:last-child {
+		margin-bottom: 1.4rem;
+	}
+}
+
+ input {
+	font-size: inherit;
+
+	&.form-control {
+		border: 1px solid $black;
+		border-top: none;
+		border-right: none;
+		border-left: none;
+		padding: 0;
+		border-radius: 0;
+	}
+	&.valid {
+		border-bottom: 2px solid $valid;
+	}
+	&.invalid {
+		border-bottom: 2px solid $invalid;
+	}
+	&::placeholder {
+		font-size: 1.6rem;
+	}
+}
+
+fa-icon {
+	font-size: 1.5rem;
+	&.valid {
+		color: $valid;
+	}
+	&.invalid {
+		color: $invalid;
+	}
+	&.untouched {
+		color: $default;
+	}
+}
+
+
+@media  (max-width: 59em) {
+	input::placeholder {
+		font-size:2rem;
+	}
+	input {
+		font-size: 2.4rem;
+	}
+}

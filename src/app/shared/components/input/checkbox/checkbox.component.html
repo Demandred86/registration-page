@@ -1,0 +1,8 @@
+
+
+	<div  [ngClass]="checkboxColor" class="checkbox-custom" [formGroup]="formGroupRef" [ngClass]="{disabled}" >
+		<input [ngClass]="" type="checkbox" [checked]="isChecked" (change)="toggleCheckbox()" [formControlName]="controlName" />
+		<label [ngClass]="{ required: isRequired, 'float-left': true }" (click)="toggleCheckbox()" [for]="controlName">
+			{{ _label | translate }}
+		</label>
+	</div>

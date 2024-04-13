@@ -1,0 +1,8 @@
+<button class="btn py-2 font-button" [ngClass]="classes" [type]="type" [disabled]="disabled">
+	<div class="d-flex align-items-center justify-content-center w-100 position-relative">
+		<ng-content></ng-content>
+		<div class="mx-4 position-absolute end-0 d-flex justify-content-end right-0">
+			<img src="assets/icons/arrow-right.svg" [ngClass]="[disabled ? 'filter-black' : '']" *ngIf="showArrow" />
+		</div>
+	</div>
+</button>

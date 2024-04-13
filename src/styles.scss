@@ -1,4 +1,304 @@
-/* You can add global styles to this file, and also import other style files */
+@import "/src/styles/colors.scss";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: $black;
+	font-size: 18px;
+	margin: 0;
+}
+
+img {
+	object-fit: contain;
+}
+
+.wrapper {
+	min-height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	background-image: url("assets/background/background-page.jpg");
+}
+
+.title {
+	text-transform: uppercase;
+	font-size: 3.6rem;
+	text-align: center;
+	margin-bottom: 28px;
+	font-weight: 500;
+}
+
+.container-box {
+	max-width: 70rem;
+	width: 100%;
+	background-color: $background;
+	padding: 2.5rem 3rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+input,
+textarea,
+select,
+button {
+	color: #333;
+	font-size: 13px;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+	margin: 0;
+}
+img {
+	max-width: 100%;
+}
+a:hover {
+	text-decoration: none;
+}
+:focus {
+	outline: none;
+}
+
+.inner {
+	padding: 20px;
+	background: #fff;
+	max-width: 850px;
+	margin: auto;
+	display: flex;
+}
+
+.inner .image-holder {
+	width: 50%;
+}
+
+.inner form {
+	width: 50%;
+	padding-top: 36px;
+	padding-left: 45px;
+	padding-right: 45px;
+}
+
+.inner h3 {
+	text-transform: uppercase;
+	font-size: 25px;
+	font-family: poppins-semibold;
+	text-align: center;
+	margin-bottom: 28px;
+}
+
+.form-group {
+	display: flex;
+}
+
+.form-group input {
+	width: 50%;
+}
+
+.inner-input:first-child {
+	margin-right: 2.5rem;
+}
+
+.input-field {
+	margin-bottom: 2rem;
+}
+
+.form-control::-webkit-input-placeholder {
+	font-size: 13px;
+	color: #333;
+}
+
+.form-control::-moz-placeholder {
+	font-size: 13px;
+	color: #333;
+}
+
+.form-control:-ms-input-placeholder {
+	font-size: 13px;
+	color: #333;
+}
+
+.form-control:-moz-placeholder {
+	font-size: 13px;
+	color: #333;
+}
+
+.m-right-25 {
+	margin-right: 2.5rem;
+}
+
+.m-top-2 {
+	margin-top: 2rem;
+}
+.m-top-3 {
+	margin-top: 3rem;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+@-webkit-keyframes hvr-icon-wobble-horizontal {
+	16.65% {
+		-webkit-transform: translateX(6px);
+		transform: translateX(6px);
+	}
+
+	33.3% {
+		-webkit-transform: translateX(-5px);
+		transform: translateX(-5px);
+	}
+
+	49.95% {
+		-webkit-transform: translateX(4px);
+		transform: translateX(4px);
+	}
+
+	66.6% {
+		-webkit-transform: translateX(-2px);
+		transform: translateX(-2px);
+	}
+
+	83.25% {
+		-webkit-transform: translateX(1px);
+		transform: translateX(1px);
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+@keyframes hvr-icon-wobble-horizontal {
+	16.65% {
+		-webkit-transform: translateX(6px);
+		transform: translateX(6px);
+	}
+
+	33.3% {
+		-webkit-transform: translateX(-5px);
+		transform: translateX(-5px);
+	}
+
+	49.95% {
+		-webkit-transform: translateX(4px);
+		transform: translateX(4px);
+	}
+
+	66.6% {
+		-webkit-transform: translateX(-2px);
+		transform: translateX(-2px);
+	}
+
+	83.25% {
+		-webkit-transform: translateX(1px);
+		transform: translateX(1px);
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+/****************************/
+/* BELOW 1344px (Smaller desktops)*/
+/****************************/
+
+@media (max-width: 84em) {
+	.wrapper {
+		background-position: right center;
+	}
+
+	.form-wrapper .title {
+		font-size: 3.6rem;
+	}
+}
+
+/****************************/
+/* BELOW 1200px (Landscape Tablets)*/
+/****************************/
+@media (max-width: 75em) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+/****************************/
+/* BELOW 944px (Tablets)*/
+/****************************/
+@media (max-width: 59em) {
+	.form-group {
+		flex-direction: column;
+		.inner-input:first-child {
+			margin-right: 0;
+		}
+		.text-field-containergroup {
+			margin-top: 3rem;
+		}
+	}
+
+	.inner form {
+		padding-top: 10px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+/****************************/
+/* BELOW 704px (Smaller Tablets)*/
+/****************************/
+
+@media (max-width: 44em) {
+	.inner {
+		flex-direction: column-reverse;
+	}
+
+	.inner .image-holder {
+		width: 100%;
+	}
+
+	.inner form {
+		width: 100%;
+		padding: 40px 0 30px;
+	}
+	img {
+		max-height: 100vh;
+	}
+	button {
+		margin-top: 2rem;
+	}
+}
+/****************************/
+/* BELOW 544px (Phones)*/
+/****************************/
+
+@media (max-width: 34em) {
+	.wrapper {
+		background-image: none;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
