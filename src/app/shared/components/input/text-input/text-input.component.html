@@ -3,7 +3,7 @@
 	<div class="d-flex flex-row">
 	<div class="input-group" [formGroup]="FormGroup">
 		<input
-			[ngClass]="{'invalid': inputErrors, 'valid': isValid}"
+			[ngClass]="{'invalid': inputErrors, 'valid': isValid, 'm-right-15': descriptionMargin }"
 			class="form-control"
 			[name]="controlName"
 			[formControlName]="controlName"
@@ -11,7 +11,7 @@
 			[placeholder]="_placeholder | translate"
 			[type]="type"
 			[autocomplete]="type === 'password' ? 'new-password' : 'off'"
-		/>
+					/>
 	</div>
 	<div *ngIf="isRequired && !touched || touched && isValid"> 
 		<fa-icon [icon]="successIcon" [ngClass]="{'valid':isValid, 'untouched':!touched }"></fa-icon>

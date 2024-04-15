@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, OnInit, Input } from "@angular/core";
-import { FormGroup, Validators } from "@angular/forms";
+import { AbstractControl, FormGroup, Validators } from "@angular/forms";
 import { translateKey } from "src/app/shared/properties/types.utils";
-import { IconDefinition, faCircle, faCircleCheck, faCircleExclamation, faExclamation } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition, faCircle, faCircleCheck, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 
 @Component({
@@ -12,6 +12,7 @@ import { IconDefinition, faCircle, faCircleCheck, faCircleExclamation, faExclama
 })
 
 export class TextInputComponent implements OnInit {
+
     @Input() label!: translateKey;
     @Input() FormGroup!: FormGroup;
     @Input() controlName!: string | number;
@@ -22,14 +23,16 @@ export class TextInputComponent implements OnInit {
     @Output() blurEvent = new EventEmitter<unknown>();
 
     touched: boolean = false;
+    control!: AbstractControl;
+
     selectedIcon!: IconDefinition
 
     ngOnInit(): void {
-
-        if (this.inputErrors && this.touched) {
-            this.selectedIcon = this.failIcon
-        }
-        else this.successIcon
+        this.control = this.FormGroup.controls[this.controlName.toString()];
+        this.FormGroup.controls[this.controlName].valueChanges.subscribe(() => {
+            this.FormGroup.controls[this.controlName].markAsTouched()
+            this.touched = this.FormGroup.controls[this.controlName].touched
+        })
     }
 
     blurAction() {
@@ -37,21 +40,6 @@ export class TextInputComponent implements OnInit {
         this.blurEvent.emit();
     }
 
-    get _placeholder(): translateKey {
-        return `${this.label}.${this.controlName}.placeholder`;
-    }
-
-    get iconClass(): string {
-        if (this.inputErrors && this.touched) return 'invalid'
-        return "valid"
-    }
-    get isValid(): boolean {
-        return this.FormGroup.controls[this.controlName].valid
-    }
-    get control() {
-        return this.FormGroup.controls[this.controlName.toString()];
-    }
-    
     validateInput() {
         if (!this.control) return;
         this.control.markAsTouched();
@@ -63,23 +51,26 @@ export class TextInputComponent implements OnInit {
         return `${this.label}.${this.controlName}.error.${errorLabel}`;
     }
 
+
+    get _placeholder(): translateKey {
+        return `${this.label}.${this.controlName}.placeholder`;
+    }
+
+
+    get isValid(): boolean {
+        return this.FormGroup.controls[this.controlName].valid
+    }
+
     get inputErrors(): boolean {
         let hasErrors = false
         if (!this.control) return false;
         if (this.control?.errors)
             hasErrors = Object.keys(this.control?.errors).length > 0;
         return this.control?.touched && hasErrors;
-    }  
+    }
 
     get isRequired(): boolean {
         return this.FormGroup.controls[this.controlName].hasValidator(Validators.required) ? true : false;
-    }
-
-    get hasValidators(): boolean {
-        return this.FormGroup.controls[this.controlName].validator ? true : false;
-    }
-    get showValidationIcon(): boolean {
-        return this.hasValidators && this.isRequired
     }
 
     get errors(): string[] | [] {
@@ -90,6 +81,9 @@ export class TextInputComponent implements OnInit {
     }
 
 
-
-
+get descriptionMargin(): boolean {
+    console.log(!(this.isRequired && !this.touched || this.touched && this.isValid) && !(this.touched && !this.isValid));
+    return !(this.isRequired && !this.touched || this.touched && this.isValid) && !(this.touched && !this.isValid)
+}
+    
 }

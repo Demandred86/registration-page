@@ -41,13 +41,13 @@ export function passwordValidator(): ValidatorFn {
     if (firstName)
   if(password)
     
-    if (firstName && firstName.length > 3 && password.toLowerCase().includes(firstName.toLowerCase())) {
+    if (firstName && firstName.length > 3 && password && password.toLowerCase().includes(firstName.toLowerCase())) {
     
       errors['nameOrSurnameUsed'] = true;
     }
 
     const lastName = control.get('lastName')?.value as string | undefined;
-    if (lastName && lastName.length > 3 && password.toLowerCase().includes(lastName.toLowerCase())) {
+    if (lastName && lastName.length > 3 && password &&password.toLowerCase().includes(lastName.toLowerCase())) {
       errors['nameOrSurnameUsed'] = true;
     }
 
