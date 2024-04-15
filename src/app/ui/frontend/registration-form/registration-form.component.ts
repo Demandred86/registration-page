@@ -14,8 +14,7 @@ import { addressValidator } from 'src/app/shared/utils/validators/validator';
 export class RegistrationFormComponent implements OnInit {
 
 	formGroup!: FormGroup;
-	backgroundPage: assetPath = '/assets/background/background-page.jpg';
-	backgroundForm: assetPath = '/assets/background/background-form.jpg';
+	backgroundForm: assetPath = './assets/background-form.jpg';
 	forbiddenWords: string[] = [];
 
 
