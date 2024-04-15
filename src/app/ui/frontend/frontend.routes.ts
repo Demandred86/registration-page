@@ -12,5 +12,9 @@ export const frontendRoutes: Routes = [
     {
         path: REGISTRATION_PATH,
         component: RegistrationFormComponent
+    },
+    {
+        path: "**",
+        component: RegistrationFormComponent
     }
 ];
