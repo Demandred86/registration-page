@@ -82,7 +82,6 @@ export class TextInputComponent implements OnInit {
 
 
 get descriptionMargin(): boolean {
-    console.log(!(this.isRequired && !this.touched || this.touched && this.isValid) && !(this.touched && !this.isValid));
     return !(this.isRequired && !this.touched || this.touched && this.isValid) && !(this.touched && !this.isValid)
 }
     

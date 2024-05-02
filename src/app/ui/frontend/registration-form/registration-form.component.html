@@ -5,22 +5,16 @@
 		</div>
 		<form class="form-wrapper">
 			<h1 class="title">{{ "registrationForm.title" | translate }}</h1>
-			<div class="form-group">
-				<div class="inner-input">
-				<app-text-input
-					class="m-right-25"
+	<app-text-input
+					class="m-right-25"q
 					label="registrationForm"
 					[FormGroup]="formGroup"
 					controlName="firstName"
 				/>
-			</div>
-			<div class="inner-input">
 				<app-text-input 
                 label="registrationForm" 
                 [FormGroup]="formGroup" 
                 controlName="lastName" />
-			</div>
-		</div>
 			<div class="m-top-3">
 				<app-text-input 
                 label="registrationForm" 
